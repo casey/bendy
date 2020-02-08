@@ -47,6 +47,9 @@ pub enum ErrorKind {
     /// Error through an unexpected bencode token during deserialization.
     #[fail(display = "discovered {} but expected {}", _0, _1)]
     UnexpectedToken(String, String),
+    /// Error that occurs if serde deserialization fails for any other reason
+    #[fail(display = "serde deserialization failed: {}", _0)]
+    Serde(String),
 }
 
 pub trait ResultExt {
