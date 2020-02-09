@@ -9,7 +9,7 @@
 
 extern crate alloc;
 
-#[cfg(all(test, feature = "serde"))]
+#[cfg(all(feature = "serde", test))]
 #[macro_use]
 mod assert_matches;
 
